@@ -14,7 +14,8 @@ const PrivacyForm = () => {
         <div className="container">
             <div className="row">
                 <div className="col-lg-3"></div>
-                <div className="col-lg-9 float-left">
+                <div className="col-lg-9 d-flex justify-content-start">
+                    <div>
                     <h5>Privacy Form</h5>
                     <p>Update your privacy settings below</p>
                     <form>
@@ -39,6 +40,7 @@ const PrivacyForm = () => {
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Bio</label>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
