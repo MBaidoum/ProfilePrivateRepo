@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+/*Profile NavBar*/
+.profile-header{
+  text-align: center;
+}
+
+.profile-header p {
+  font-size: 12px;
+}
+
+.profile-header img {
+  border-radius: 50%;
+}
+
+.me-auto {
+  text-align: center;
+}
+
+#navbarScrollingDropdown::after{
+  display: none;
+}
+
+.container {
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/*Privacy Form*/
+form {
+  width: 300px;
+}
+
+
+
