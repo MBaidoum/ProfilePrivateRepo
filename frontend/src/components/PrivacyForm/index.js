@@ -39,6 +39,8 @@ const PrivacyForm = () => {
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"/>
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Bio</label>
                         </div>
+                        <br />
+                        <button type="submit" className="btn col-12 btn-danger">Update</button>
                     </form>
                     </div>
                 </div>
