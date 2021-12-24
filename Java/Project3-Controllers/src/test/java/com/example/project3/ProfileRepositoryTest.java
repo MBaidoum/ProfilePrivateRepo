@@ -1,10 +1,14 @@
-package com.example.project3.repositories;
+package com.example.project3;
 
 import com.example.project3.entities.Privacy;
 import com.example.project3.entities.Profile;
+import com.example.project3.repositories.PrivacyRepository;
+import com.example.project3.repositories.ProfileRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 class ProfileRepositoryTest {
@@ -20,23 +24,24 @@ class ProfileRepositoryTest {
     @Test
     public void savePrivacy(){
         Privacy privacy = Privacy.builder()
-                .email(false)
+                .email(true)
                 .dob(false)
-                .gender(false)
-                .name(false)
+                .gender(true)
+                .name(true)
                 .bio(false)
                 .build();
         repository3.save(privacy);
     }
 
+    //Will succeed if the entry is new and fail if username or email are repeats in the database
     @Test
     public void saveProfile() {
         Privacy privacy = new Privacy();
-        privacy.setPrivacyid(1L);
+        privacy.setPrivacyid(3L);
         Profile profile = Profile.builder()
-                .username("will3b32434333")
+                .username("will3b")
                 .password("password")
-                .email("wjbecht4334343443322lb2be@gmail.com")
+                .email("wjbecht433lb2be@gmail.com")
                 .name("will bechtle")
                 .alias("wjb")
                 .dob("06/17/1998")
@@ -46,6 +51,14 @@ class ProfileRepositoryTest {
                 .privacys(privacy)
                 .build();
         repository2.save(profile);
+    }
+
+    //this test doesn't quite work yet
+    @Test
+    public void listProfiles() {
+        List<Profile> profiles = repository2.findAll();
+        long i = profiles.get(0).getId();
+        assert equals(i == 1);
     }
 
 }

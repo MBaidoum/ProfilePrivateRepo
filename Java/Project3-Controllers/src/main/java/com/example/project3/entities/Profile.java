@@ -1,5 +1,6 @@
 package com.example.project3.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -41,8 +42,9 @@ public class Profile {
     private String bio;
     @Column(name = "profilepic")
     private String profilepic;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "privacy_id")
+    @JsonManagedReference
     private Privacy privacys;
 
     public Long getId() {
