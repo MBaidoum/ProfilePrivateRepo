@@ -11,8 +11,8 @@ repository for the team
 ![image](https://user-images.githubusercontent.com/93163143/147493294-46d8d999-1f54-4963-a852-f827a60f6362.png)
 
 ## Update a profile (get picture as well to show it works):
-![image](https://user-images.githubusercontent.com/93163143/147493990-f73ad90e-22ea-480d-905f-7307f0c53b60.png)
-![image](https://user-images.githubusercontent.com/93163143/147494055-fd3ee1a5-1aec-4a5b-a809-e902126e1b9e.png)
+![image](https://user-images.githubusercontent.com/93163143/147494165-0b960936-c3bb-497f-a012-725e55451d89.png)
+![image](https://user-images.githubusercontent.com/93163143/147494190-8c719378-8668-4cf8-8a73-49e0ad2e976c.png)
 
 
 
