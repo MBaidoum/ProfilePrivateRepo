@@ -9,3 +9,6 @@ repository for the team
 
 ## Save a profile (privacy will return null, but if you do a GET right after, you'll see it loads privacy correctly):
 ![image](https://user-images.githubusercontent.com/93163143/147493294-46d8d999-1f54-4963-a852-f827a60f6362.png)
+
+## Update a profile (get picture as well to show it works):
+![image](https://user-images.githubusercontent.com/93163143/147493511-442f7d41-f1f5-473c-b1e3-f3663009f98a.png)
