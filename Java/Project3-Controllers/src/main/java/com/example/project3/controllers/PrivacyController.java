@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+//Controls for all things pertaining to privacy data
 @RestController
 public class PrivacyController {
 
@@ -25,6 +26,7 @@ public class PrivacyController {
         return service.getPrivacyById(id);
     }
 
+    //only needs to be called once, but multiple calls don't break anything
     @GetMapping("/init")
     public String init() {
         service.populatePresets();

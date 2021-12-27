@@ -35,6 +35,7 @@ public class ProfileServiceImpl implements ProfileService{
         repository.deleteById(id);
     }
 
+    //Username and email excluded since those fields do not ever change
     @Override
     public Profile updateProfileByUserId(long id, Profile updateProfile) {
         Profile profileDB = repository.findById(id).get();

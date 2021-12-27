@@ -25,6 +25,7 @@ public class PrivacyServiceImpl implements PrivacyService{
         return privacy.get();
     }
 
+    //Loop runs exactly 32 times, so don't worry about Big O if the nested loops scared you
     @Override
     public void populatePresets() {
         long count = 0L;
