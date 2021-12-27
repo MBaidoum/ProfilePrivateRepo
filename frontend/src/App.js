@@ -1,15 +1,11 @@
 import { Navbar } from 'react-bootstrap';
 import './App.css';
-import Footer from './components/Footer';
-import NavbarProfile from './components/Navbar';
-import PrivacyForm from './components/PrivacyForm';
+import PrivacyPage from './pages/PrivacyPage';
 
 function App() {
   return (
     <div className="App">
-          <NavbarProfile />
-          <PrivacyForm />
-          {/* <Footer /> */}
+      <PrivacyPage/>
     </div>
   );
 }

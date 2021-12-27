@@ -64,9 +64,20 @@
   margin: 0;
 }
 
+.nav-link {
+  height: 50px;
+}
+
 /*Privacy Form*/
 form {
   width: 300px;
+}
+
+/*Footer*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 
