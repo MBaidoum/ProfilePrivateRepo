@@ -24,4 +24,5 @@ public class PrivacyServiceImpl implements PrivacyService{
         Optional<Privacy> privacy = repository.findById(id);
         return privacy.get();
     }
+
 }
