@@ -11,7 +11,7 @@ const PrivacyForm = () => {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:9007/privacy/1", privacy)
+        axios.get("http://localhost:9007/privacy/2", privacy)
         .then((response) => {
             setPrivacy(response.data);
         })
@@ -20,15 +20,15 @@ const PrivacyForm = () => {
 
     function onSubmitHandler(e) {
          e.preventDefault()
-        axios.put('http://localhost:9007/privacy/1', privacy)
-        .then(response => {
-            setPrivacy(response.data)
-            window.location.pathname = ('/PrivacyPage')
-        },
-            error => {
-                console.log(error)
-            })
-            .catch(error => console.error(error))
+        // axios.put('http://localhost:9007/privacy/6', privacy)
+        // .then(response => {
+        //     setPrivacy(response.data)
+        //     window.location.pathname = ('/PrivacyPage')
+        // },
+        //     error => {
+        //         console.log(error)
+        //     })
+        //     .catch(error => console.error(error))
     }
 
     function onChangeHandler(e) {
