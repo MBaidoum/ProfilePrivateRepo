@@ -45,7 +45,8 @@ public class ProfileServiceImpl implements ProfileService{
         profileDB.setDob(updateProfile.getDob());
         profileDB.setBio(updateProfile.getBio());
         profileDB.setProfilepic(updateProfile.getProfilepic());
-
+        profileDB.setPrivacies(updateProfile.getPrivacies());
+        repository.save(profileDB);
         return profileDB;
     }
 }

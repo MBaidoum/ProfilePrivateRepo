@@ -1,5 +1,7 @@
 package com.example.project3.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
@@ -44,8 +46,7 @@ public class Profile {
     private String profilepic;
     @ManyToOne
     @JoinColumn(name = "privacy_id")
-    @JsonManagedReference
-    private Privacy privacys;
+    private Privacy privacies;
 
     public Long getId() {
         return id;
@@ -128,10 +129,10 @@ public class Profile {
     }
 
     public Privacy getPrivacies() {
-        return privacys;
+        return privacies;
     }
 
     public void setPrivacies(Privacy privacys) {
-        this.privacys = privacys;
+        this.privacies = privacys;
     }
 }
