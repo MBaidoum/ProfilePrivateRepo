@@ -9,4 +9,5 @@ import java.util.List;
 public interface PrivacyService {
     public List<Privacy> getAllPrivacy();
     public Privacy getPrivacyById(long id);
+    public void populatePresets();
 }

@@ -24,4 +24,10 @@ public class PrivacyController {
     public Privacy getPrivacyById(@PathVariable("id") long id) {
         return service.getPrivacyById(id);
     }
+
+    @GetMapping("/init")
+    public String init() {
+        service.populatePresets();
+        return "Presets have been set";
+    }
 }
