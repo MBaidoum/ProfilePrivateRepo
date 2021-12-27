@@ -125,11 +125,11 @@ public class Profile {
         this.profilepic = profilepic;
     }
 
-    public Privacy getPrivacys() {
+    public Privacy getPrivacies() {
         return privacys;
     }
 
-    public void setPrivacys(Privacy privacys) {
+    public void setPrivacies(Privacy privacys) {
         this.privacys = privacys;
     }
 }
