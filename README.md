@@ -12,5 +12,7 @@ repository for the team
 
 ## Update a profile (get picture as well to show it works):
 ![image](https://user-images.githubusercontent.com/93163143/147493990-f73ad90e-22ea-480d-905f-7307f0c53b60.png)
+![image](https://user-images.githubusercontent.com/93163143/147494055-fd3ee1a5-1aec-4a5b-a809-e902126e1b9e.png)
+
 
 
