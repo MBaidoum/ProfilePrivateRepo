@@ -48,7 +48,7 @@ class ProfileRepositoryTest {
                 .gender("male")
                 .bio("hello im will")
                 .profilepic("/some_image")
-                .privacys(privacy)
+                .privacies(privacy)
                 .build();
         repository2.save(profile);
     }
