@@ -14,6 +14,9 @@ repository for the team
 ![image](https://user-images.githubusercontent.com/93163143/147494958-5240dc49-b65c-4ade-a1b5-31f0e63adf57.png)
 ![image](https://user-images.githubusercontent.com/93163143/147494990-3020802c-24a4-4c77-9f30-c68db32e84b6.png)
 
+## Delete a profile:
+![image](https://user-images.githubusercontent.com/93163143/147495062-1654cf3d-6f46-43f9-992f-2597154418e0.png)
+![image](https://user-images.githubusercontent.com/93163143/147495137-cc2aed19-d3f6-4d28-9e39-7bc73ed5bba7.png)
 
 
 
