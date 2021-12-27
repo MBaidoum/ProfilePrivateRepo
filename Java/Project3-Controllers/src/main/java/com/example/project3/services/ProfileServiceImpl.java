@@ -38,6 +38,13 @@ public class ProfileServiceImpl implements ProfileService{
     @Override
     public Profile updateProfileByUserId(long id, Profile updateProfile) {
         Profile profileDB = repository.findById(id).get();
+        profileDB.setPassword(updateProfile.getPassword());
+        profileDB.setName(updateProfile.getName());
+        profileDB.setAlias(updateProfile.getAlias());
+        profileDB.setGender(updateProfile.getGender());
+        profileDB.setDob(updateProfile.getDob());
+        profileDB.setBio(updateProfile.getBio());
+        profileDB.setProfilepic(updateProfile.getProfilepic());
 
         return profileDB;
     }
