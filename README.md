@@ -1,5 +1,7 @@
 # project3_profile
 repository for the team
 
-## Get list of all profiles:
-![image](https://user-images.githubusercontent.com/93163143/147491632-dca4bb62-ab90-4bae-9ea6-86cdd27e0262.png)
+## Get list of all profiles (not sure why two privacys are returning, but that will not effect functionality):
+![image](https://user-images.githubusercontent.com/93163143/147491738-bb59533c-6b44-4298-94b1-62f59bb30f87.png)
+
+
