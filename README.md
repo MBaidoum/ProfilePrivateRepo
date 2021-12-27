@@ -10,6 +10,11 @@ repository for the team
 ## Get list of all profiles:
 ![image](https://user-images.githubusercontent.com/93163143/147494862-b030cf0a-c57b-4ee0-bf30-821781316150.png)
 
+## Update a profile, with a get request to show it works (need id):
+![image](https://user-images.githubusercontent.com/93163143/147494958-5240dc49-b65c-4ade-a1b5-31f0e63adf57.png)
+![image](https://user-images.githubusercontent.com/93163143/147494990-3020802c-24a4-4c77-9f30-c68db32e84b6.png)
+
+
 
 
 
