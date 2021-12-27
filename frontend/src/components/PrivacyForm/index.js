@@ -2,47 +2,78 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const PrivacyForm = () => {
-    const [privacy, setPrivate] = useState({
-        Name: '',
-        Email: '',
-        DOB: '',
-        Gender: '',
-        Bio: ''
+    const [privacy, setPrivacy] = useState({
+        name: true,
+        email: false,
+        dob: false,
+        gender: true,
+        bio: false
     })
+
+    useEffect(() => {
+        axios.get("http://localhost:9007/privacy/1", privacy)
+        .then((response) => {
+            setPrivacy(response.data);
+        })
+        .catch((error) => console.error(error));
+    }, [])
+
+    function onSubmitHandler(e) {
+         e.preventDefault()
+        axios.put('http://localhost:9007/privacy/1', privacy)
+        .then(response => {
+            setPrivacy(response.data)
+            window.location.pathname = ('/PrivacyPage')
+        },
+            error => {
+                console.log(error)
+            })
+            .catch(error => console.error(error))
+    }
+
+    function onChangeHandler(e) {
+        setPrivacy({...privacy,
+            [e.target.name]: e.target.checked });
+    }
 
     return (
         <div className="container">
             <div className="row">
-                <div className="col-lg-3"></div>
-                <div className="col-lg-9 d-flex justify-content-start">
-                    <div>
-                    <h5>Privacy Form</h5>
-                    <p>Update your privacy settings below</p>
-                    <form>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"/>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">First and Last Name</label>
+                <div className="privacy-form">
+                    <h4>Privacy Form</h4>
+                    <p>Update your privacy settings below.</p>
+                    
+                    <form onSubmit={onSubmitHandler}>
+                        {/* {console.log("name: " + privacy.name)}
+                        {console.log("dob: " + privacy.dob)}
+                        {console.log("gender: " + privacy.gender)}
+                        {console.log("bio: " + privacy.bio)}
+                        {console.log("email: "  + privacy.email)}
+                        {console.log("-------")} */}
+                        <div className="form-check form-switch">
+                            <label className="form-check-label" htmlFor="name"> Hide First & Last Name</label>
+                            <input className="form-check-input" type="checkbox" id="name" name="name" checked={privacy.name} onChange={onChangeHandler}/>
+
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"/>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Email</label>
+                        <div className="form-check form-switch">
+                            <input className="form-check-input" type="checkbox" id="dob" name="dob" checked={privacy.dob} onChange={onChangeHandler} />
+                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault"> Hide Date of Birth</label>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"/>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">DOB</label>
+                        <div className="form-check form-switch">
+                            <input className="form-check-input" type="checkbox" id="gender" name="gender" checked={privacy.gender} onChange={onChangeHandler} />
+                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Hide Gender</label>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"/>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Gender</label>
+                        <div className="form-check form-switch">
+                            <input className="form-check-input" type="checkbox" id="bio" name="bio" checked={privacy.bio} onChange={onChangeHandler} />
+                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Hide Bio</label>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"/>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Bio</label>
+                        <div className="form-check form-switch">
+                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Hide Email</label>
+                            <input className="form-check-input" type="checkbox" id="email" name="email" checked={privacy.email} onChange={onChangeHandler}/>
                         </div>
                         <br />
-                        <button type="submit" className="btn col-12 btn-danger">Update</button>
+                        <button type="submit" className="btn col-12">Update</button>
                     </form>
-                    </div>
                 </div>
             </div>
         </div>
