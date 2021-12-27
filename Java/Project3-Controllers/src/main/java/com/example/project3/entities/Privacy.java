@@ -3,8 +3,6 @@ package com.example.project3.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
@@ -39,6 +37,51 @@ public class Privacy {
     @Column(name = "bio")
     private Boolean bio;
 
+    public Long getPrivacyid() {
+        return privacyid;
+    }
 
+    public void setPrivacyid(Long privacyid) {
+        this.privacyid = privacyid;
+    }
 
+    public Boolean getEmail() {
+        return email;
+    }
+
+    public void setEmail(Boolean email) {
+        this.email = email;
+    }
+
+    public Boolean getDob() {
+        return dob;
+    }
+
+    public void setDob(Boolean dob) {
+        this.dob = dob;
+    }
+
+    public Boolean getGender() {
+        return gender;
+    }
+
+    public void setGender(Boolean gender) {
+        this.gender = gender;
+    }
+
+    public Boolean getName() {
+        return name;
+    }
+
+    public void setName(Boolean name) {
+        this.name = name;
+    }
+
+    public Boolean getBio() {
+        return bio;
+    }
+
+    public void setBio(Boolean bio) {
+        this.bio = bio;
+    }
 }
