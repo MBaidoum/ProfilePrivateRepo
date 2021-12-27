@@ -20,7 +20,7 @@ class ProfileRepositoryTest {
     private PrivacyRepository repository3;
 
 
-
+    //Adds a privacy to the database with the privacy settings
     @Test
     public void savePrivacy(){
         Privacy privacy = Privacy.builder()
@@ -37,7 +37,7 @@ class ProfileRepositoryTest {
     @Test
     public void saveProfile() {
         Privacy privacy = new Privacy();
-        privacy.setPrivacyid(3L);
+        privacy.setPrivacyid(3L);//change this field to set privacy for profile
         Profile profile = Profile.builder()
                 .username("will3b")
                 .password("password")
