@@ -7,6 +7,8 @@ repository for the team
 ## Get a profile by ID:
 ![image](https://user-images.githubusercontent.com/93163143/147494796-8e2e05d4-4bb5-417b-8066-2fc10450fe6d.png)
 
+## Get list of all profiles:
+![image](https://user-images.githubusercontent.com/93163143/147494862-b030cf0a-c57b-4ee0-bf30-821781316150.png)
 
 
 
