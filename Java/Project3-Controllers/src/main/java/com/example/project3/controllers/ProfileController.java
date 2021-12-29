@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+//Controls for the profiles
 @RestController
 public class ProfileController {
 
@@ -45,7 +46,7 @@ public class ProfileController {
     }
 
     @PostMapping("/profiles/{id}/profile_pic")
-    String uploadProfilePic(@PathVariable long id, @RequestPart("image") MultipartFile image) {
+    String uploadProfilePic(@PathVariable("id") long id, @RequestPart("image") MultipartFile image) {
 
         try {
             return service.uploadProfilePic(id, image);

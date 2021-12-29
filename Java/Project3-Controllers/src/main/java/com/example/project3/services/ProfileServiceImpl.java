@@ -43,6 +43,7 @@ public class ProfileServiceImpl implements ProfileService{
         repository.deleteById(id);
     }
 
+    //Username and email excluded since those fields do not ever change
     @Override
     public Profile updateProfileByUserId(long id, Profile updateProfile) {
         Profile profileDB = repository.findById(id).get();
@@ -53,7 +54,8 @@ public class ProfileServiceImpl implements ProfileService{
         profileDB.setDob(updateProfile.getDob());
         profileDB.setBio(updateProfile.getBio());
         profileDB.setProfilepic(updateProfile.getProfilepic());
-
+        profileDB.setPrivacies(updateProfile.getPrivacies());
+        repository.save(profileDB);
         return profileDB;
     }
 
@@ -89,7 +91,6 @@ public class ProfileServiceImpl implements ProfileService{
             // Send put object request
             PutObjectResult result = s3.putObject(request);
             System.out.println("Uploaded profile pic to storage for id: " + id);
-
             String link = "https://" + bucketName + ".s3.us-east-1.amazonaws.com/" + id;
 
             //Set profilepic link in db
