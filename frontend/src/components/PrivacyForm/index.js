@@ -10,14 +10,16 @@ const PrivacyForm = () => {
         bio: false
     })
 
-    useEffect(() => {
-        axios.get("http://localhost:9007/privacy/2", privacy)
-        .then((response) => {
-            setPrivacy(response.data);
-        })
-        .catch((error) => console.error(error));
-    }, [])
+    //test use effect
+    // useEffect(() => {
+    //     axios.get("http://localhost:9007/privacy/2", privacy)
+    //     .then((response) => {
+    //         setPrivacy(response.data);
+    //     })
+    //     .catch((error) => console.error(error));
+    // }, [])
 
+    //update privacy
     function onSubmitHandler(e) {
          e.preventDefault()
         // axios.put('http://localhost:9007/privacy/6', privacy)
@@ -44,7 +46,9 @@ const PrivacyForm = () => {
                     <p>Update your privacy settings below.</p>
                     
                     <form onSubmit={onSubmitHandler}>
-                        {/* {console.log("name: " + privacy.name)}
+                        {/* 
+                        Test onChange
+                        {console.log("name: " + privacy.name)}
                         {console.log("dob: " + privacy.dob)}
                         {console.log("gender: " + privacy.gender)}
                         {console.log("bio: " + privacy.bio)}
