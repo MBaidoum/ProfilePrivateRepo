@@ -24,4 +24,32 @@ public class PrivacyServiceImpl implements PrivacyService{
         Optional<Privacy> privacy = repository.findById(id);
         return privacy.get();
     }
+
+    @Override
+    public void createPresets() {
+        Privacy privacy = Privacy.builder()
+                .email(true)
+                .dob(true)
+                .gender(true)
+                .name(true)
+                .bio(true)
+                .build();
+        for (int a = 0; a < 2; a++) {
+            privacy.setEmail(!privacy.getEmail());
+            for (int b = 0; b < 2; b++) {
+                privacy.setDob(!privacy.getDob());
+                for (int c = 0; c < 2; c++) {
+                    privacy.setGender(!privacy.getGender());
+                    for (int d = 0; d < 2; d++) {
+                        privacy.setName(!privacy.getName());
+                        for (int e = 0; e < 2; e++) {
+                            privacy.setBio(!privacy.getBio());
+                            repository.save(privacy);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
