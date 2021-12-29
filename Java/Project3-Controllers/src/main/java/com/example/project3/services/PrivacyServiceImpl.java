@@ -1,7 +1,9 @@
 package com.example.project3.services;
 
 import com.example.project3.entities.Privacy;
+import com.example.project3.entities.Profile;
 import com.example.project3.repositories.PrivacyRepository;
+import com.example.project3.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class PrivacyServiceImpl implements PrivacyService{
     @Autowired
     private PrivacyRepository repository;
 
+    @Autowired
+    private ProfileRepository profileRepository;
+
     @Override
     public List<Privacy> getAllPrivacy() {
         return repository.findAll();
@@ -21,8 +26,19 @@ public class PrivacyServiceImpl implements PrivacyService{
 
     @Override
     public Privacy getPrivacyById(long id) {
-        Optional<Privacy> privacy = repository.findById(id);
-        return privacy.get();
+        Optional<Profile> profile = profileRepository.findById(id);
+        return profile.get().getPrivacies();
+    }
+
+    //Updates the profile field in the user's information
+    @Override
+    public Profile updatePrivacy(long id, Privacy privacy) {
+        long privacyid = repository.getPrivacy(privacy.getEmail(), privacy.getDob(), privacy.getGender(),
+                privacy.getName(), privacy.getBio());
+        privacy.setPrivacyid(privacyid);
+        Profile profileDB = profileRepository.findById(id).get();
+        profileDB.setPrivacies(privacy);
+        return profileRepository.save(profileDB);
     }
 
     //Loop runs exactly 32 times, so don't worry about Big O if the nested loops scared you

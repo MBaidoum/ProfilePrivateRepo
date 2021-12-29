@@ -40,11 +40,11 @@ class ProfileRepositoryTest {
     @Test
     public void saveProfile() {
         Privacy privacy = new Privacy();
-        //privacy.setPrivacyid(3L);
+        privacy.setPrivacyid(3L);
         Profile profile = Profile.builder()
-                .username("will3b")
+                .username("will4b")
                 .password("password")
-                .email("wjbecht433lb2be@gmail.com")
+                .email("wjbecht432be@gmail.com")
                 .name("will bechtle")
                 .alias("wjb")
                 .dob("06/17/1998")
@@ -61,7 +61,7 @@ class ProfileRepositoryTest {
     public void listProfiles() {
         List<Profile> profiles = repository2.findAll();
         long i = profiles.get(0).getId();
-        assert equals(i == 1);
+        assert equals(i = 1);
     }
 
 }
