@@ -3,12 +3,11 @@ package com.example.project3.controllers;
 import com.example.project3.entities.Privacy;
 import com.example.project3.services.PrivacyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//Controls for all things pertaining to privacy data
 @RestController
 public class PrivacyController {
 
@@ -20,8 +19,15 @@ public class PrivacyController {
         return service.getAllPrivacy();
     }
 
-    @GetMapping("/privacy/{id}")
-    public Privacy getPrivacyById(@PathVariable("id") long id) {
+    @GetMapping("/privacy/{profileid}")
+    public Privacy getPrivacyById(@PathVariable("profileid") long id) {
         return service.getPrivacyById(id);
     }
+
+    @PutMapping("/privacy/{profileid}")
+    public String updatePrivacy(@PathVariable("profileid") long id, @RequestBody Privacy privacy) {
+        service.updatePrivacy(id, privacy);
+        return "Privacy updated";
+    }
+
 }

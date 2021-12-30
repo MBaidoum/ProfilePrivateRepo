@@ -19,11 +19,13 @@ class ProfileRepositoryTest {
     @Autowired
     private PrivacyRepository repository3;
 
-
-    //Adds a privacy to the database with the privacy settings
+    //comment out save or delete to test those individually
+    //leave privacy as an unused, high number to ensure extra values are not tacked on
+    //any values from 1 to 32 will overwrite the defaults and should not be used
     @Test
     public void savePrivacy(){
         Privacy privacy = Privacy.builder()
+                .privacyid(36L)
                 .email(true)
                 .dob(false)
                 .gender(true)
@@ -31,24 +33,25 @@ class ProfileRepositoryTest {
                 .bio(false)
                 .build();
         repository3.save(privacy);
+        repository3.delete(privacy);
     }
 
     //Will succeed if the entry is new and fail if username or email are repeats in the database
     @Test
     public void saveProfile() {
         Privacy privacy = new Privacy();
-        privacy.setPrivacyid(3L);//change this field to set privacy for profile
+        privacy.setPrivacyid(3L);
         Profile profile = Profile.builder()
-                .username("will3b")
+                .username("will4b")
                 .password("password")
-                .email("wjbecht433lb2be@gmail.com")
+                .email("wjbecht432be@gmail.com")
                 .name("will bechtle")
                 .alias("wjb")
                 .dob("06/17/1998")
                 .gender("male")
                 .bio("hello im will")
                 .profilepic("/some_image")
-                .privacys(privacy)
+                .privacies(privacy)
                 .build();
         repository2.save(profile);
     }
@@ -58,7 +61,7 @@ class ProfileRepositoryTest {
     public void listProfiles() {
         List<Profile> profiles = repository2.findAll();
         long i = profiles.get(0).getId();
-        assert equals(i == 1);
+        assert equals(i = 1);
     }
 
 }
