@@ -24,6 +24,12 @@ public class PrivacyController {
         return service.getPrivacyById(id);
     }
 
+    @GetMapping("/presets")
+    public String initializePresets() {
+        service.populatePresets();
+        return "Privacy presets loaded initialized";
+    }
+
     @PutMapping("/privacy/{profileid}")
     public String updatePrivacy(@PathVariable("profileid") long id, @RequestBody Privacy privacy) {
         service.updatePrivacy(id, privacy);
