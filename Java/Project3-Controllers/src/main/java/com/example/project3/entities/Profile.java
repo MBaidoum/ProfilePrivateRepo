@@ -1,11 +1,9 @@
 package com.example.project3.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -37,13 +35,11 @@ public class Profile {
     @Column(name = "alias", nullable = false)
     private String alias;
     @Column(name = "dob")
-    private String dob;
+    private Date dob;
     @Column(name = "gender")
     private String gender;
     @Column(name= "bio")
     private String bio;
-    @Column(name = "profilepic")
-    private String profilepic;
     @ManyToOne
     @JoinColumn(name = "privacy_id")
     private Privacy privacies;
@@ -96,11 +92,11 @@ public class Profile {
         this.alias = alias;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
@@ -118,14 +114,6 @@ public class Profile {
 
     public void setBio(String bio) {
         this.bio = bio;
-    }
-
-    public String getProfilepic() {
-        return profilepic;
-    }
-
-    public void setProfilepic(String profilepic) {
-        this.profilepic = profilepic;
     }
 
     public Privacy getPrivacies() {

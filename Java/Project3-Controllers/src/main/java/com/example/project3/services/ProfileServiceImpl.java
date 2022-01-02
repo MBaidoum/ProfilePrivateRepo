@@ -53,7 +53,6 @@ public class ProfileServiceImpl implements ProfileService{
         profileDB.setGender(updateProfile.getGender());
         profileDB.setDob(updateProfile.getDob());
         profileDB.setBio(updateProfile.getBio());
-        profileDB.setProfilepic(updateProfile.getProfilepic());
         profileDB.setPrivacies(updateProfile.getPrivacies());
         repository.save(profileDB);
         return profileDB;
@@ -95,7 +94,7 @@ public class ProfileServiceImpl implements ProfileService{
 
             //Set profilepic link in db
             Profile dbProfile = repository.getById(id);
-            dbProfile.setProfilepic(link);
+            //dbProfile.setProfilepic(link); Profile pic has been removed, will remove later if nothing breaks
             repository.save(dbProfile);
 
             return link;

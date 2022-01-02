@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.Date;
+
 @SpringBootTest
 class ProfileRepositoryTest {
 
@@ -44,10 +46,9 @@ class ProfileRepositoryTest {
                 .email("wjbecht434652be@gmail.com") //change this for repeat tests
                 .name("will bechtle")
                 .alias("wjb")
-                .dob("06/17/1998")
+                .dob(Date.valueOf("1998-06-17"))
                 .gender("male")
                 .bio("hello im will")
-                .profilepic("/some_image")
                 .privacies(privacy)
                 .build();
         repository2.save(profile);
