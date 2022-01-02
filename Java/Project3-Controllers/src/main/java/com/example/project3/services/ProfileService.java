@@ -11,6 +11,7 @@ public interface ProfileService {
     public Profile addProfile(Profile profile);
     public List<Profile> getAllProfiles();
     public Profile getProfileByUserId(long id);
+    public Profile getProfileByUserIdPrivate(long id);
     public void deleteProfile(long id);
     public Profile updateProfileByUserId(long id, Profile updateProfile);
     String uploadProfilePic(long id, MultipartFile image) throws Exception;

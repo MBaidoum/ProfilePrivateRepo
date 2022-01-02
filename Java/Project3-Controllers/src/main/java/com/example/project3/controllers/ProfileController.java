@@ -33,6 +33,11 @@ public class ProfileController {
         return service.getProfileByUserId(id);
     }
 
+    @GetMapping("profiles/hidden/{id}")
+    public Profile getProfileByIdPrivate(@PathVariable("id") long id) {
+        return service.getProfileByUserIdPrivate(id);
+    }
+
     @DeleteMapping("/profiles/{id}")
     public String deleteProfile(@PathVariable("id") long id) {
         service.deleteProfile(id);

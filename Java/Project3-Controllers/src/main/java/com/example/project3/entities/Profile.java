@@ -3,7 +3,6 @@ package com.example.project3.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Data
@@ -35,7 +34,7 @@ public class Profile {
     @Column(name = "alias", nullable = false)
     private String alias;
     @Column(name = "dob")
-    private Date dob;
+    private String dob;
     @Column(name = "gender")
     private String gender;
     @Column(name= "bio")
@@ -92,11 +91,11 @@ public class Profile {
         this.alias = alias;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 

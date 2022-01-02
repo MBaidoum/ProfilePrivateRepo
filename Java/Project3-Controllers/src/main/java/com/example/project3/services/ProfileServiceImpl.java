@@ -6,6 +6,7 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.*;
+import com.example.project3.entities.Privacy;
 import com.example.project3.entities.Profile;
 import com.example.project3.repositories.ProfileRepository;
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
@@ -35,6 +36,24 @@ public class ProfileServiceImpl implements ProfileService{
     @Override
     public Profile getProfileByUserId(long id) {
         Optional<Profile> profile = repository.findById(id);
+        return profile.get();
+    }
+
+    @Override
+    public Profile getProfileByUserIdPrivate(long id) {
+        Optional<Profile> profile = repository.findById(id);
+        Privacy privacy = profile.get().getPrivacies();
+        if(privacy.getBio())
+            profile.get().setBio("");
+        if(privacy.getDob())
+            profile.get().setDob("");
+        if(privacy.getEmail())
+            profile.get().setEmail("");
+        if(privacy.getGender())
+            profile.get().setGender("");
+        if(privacy.getName())
+            profile.get().setName("");
+
         return profile.get();
     }
 
