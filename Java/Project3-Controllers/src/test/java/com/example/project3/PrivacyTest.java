@@ -19,6 +19,8 @@ public class PrivacyTest {
     @PersistenceContext
     private EntityManager entityManager;
 
+    //Extraneous, just for testing service
+    //If you need the presets you should use /presets
     @Transactional
     @Test
     public void populatePresets() {

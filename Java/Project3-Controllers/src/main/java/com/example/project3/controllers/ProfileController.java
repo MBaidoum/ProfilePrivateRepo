@@ -2,11 +2,16 @@ package com.example.project3.controllers;
 
 import com.example.project3.entities.Profile;
 import com.example.project3.services.ProfileService;
+import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+//Controls for the profiles
 @RestController
 public class ProfileController {
 
@@ -38,5 +43,17 @@ public class ProfileController {
     public String updateProfile(@PathVariable("id") long id, @RequestBody Profile profile) {
         service.updateProfileByUserId(id, profile);
         return "Profile successfully updated";
+    }
+
+    @PostMapping("/profiles/{id}/profile_pic")
+    String uploadProfilePic(@PathVariable("id") long id, @RequestPart("image") MultipartFile image) {
+
+        try {
+            return service.uploadProfilePic(id, image);
+        } catch (FileUploadException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Could not upload profile picture.");
+        }
     }
 }
